@@ -37,8 +37,8 @@ public class ArticuloController {
     @GetMapping
     public ResponseEntity<List<ArticuloDto>> listarArticulos() {
         List<Articulo> articulos = articuloService.findAll();
-        List<ArticuloDto> articuloesDTO = articulos.stream().map(ArticuloDto::new).collect(Collectors.toList());
-        return ResponseEntity.ok(articuloesDTO);
+        List<ArticuloDto> articuloDTO = articulos.stream().map(ArticuloDto::new).collect(Collectors.toList());
+        return ResponseEntity.ok(articuloDTO);
     }
 
     //OBTENER UNA ARTICULO ESPECIFICA POR SU ID

@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -17,6 +19,9 @@ public class Articulo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long artCod;
     private String artNombre;
+
+    @ManyToOne
+    @JoinColumn(name =  "labCod")
     private Laboratorio laboratorio;
     private Integer artSaldo;
     private Float artCosto;
