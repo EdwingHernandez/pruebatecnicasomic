@@ -12,4 +12,5 @@ public interface FacturaService {
     Factura save(Factura factura);
     Factura update(Long id, Factura factura);
     Optional<Factura> delete(Long id);
+    Double obtenerTotalFacturas(String nitDocumento);
 }

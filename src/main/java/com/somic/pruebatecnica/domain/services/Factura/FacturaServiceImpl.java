@@ -18,6 +18,14 @@ public class FacturaServiceImpl implements FacturaService{
     @Autowired
     private final FacturaRepository facturaRepository;
 
+
+    @Override
+    public Double obtenerTotalFacturas(String nitCod) {
+        Double total = facturaRepository.obtenerTotalFacturasPorCliente(nitCod);
+        return (total != null) ? total : 0.0;
+    }
+
+
     public FacturaServiceImpl(FacturaRepository facturaRepository) {
         this.facturaRepository = facturaRepository;
     }

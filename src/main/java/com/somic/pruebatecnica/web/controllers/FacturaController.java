@@ -83,6 +83,12 @@ public class FacturaController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }    
+    }
+    
+    @GetMapping("/total/{nitDocumento}")
+    public ResponseEntity<Double> obtenerTotal(@PathVariable String nitDocumento) {
+        Double total = facturaService.obtenerTotalFacturas(nitDocumento);
+        return ResponseEntity.ok(total);
+    }
 
 }
