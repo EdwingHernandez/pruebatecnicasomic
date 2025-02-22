@@ -5,26 +5,22 @@ import com.somic.pruebatecnica.persistence.entities.Facturakardex;
 
 public class FacturakardexDto {
 
-    private Long kardexCod;
+    private Long factuKardexCod;
     private Long factuCod;
-    private Long artCod;
-    private Integer kardexUnd;
-    private Boolean kardexNatu;
+    private Long kardexCod;
 
     public FacturakardexDto(Facturakardex facturakardex) {
-        this.kardexCod = facturakardex.getKardexCod();
+        this.kardexCod = facturakardex.getFactuKardexCod();
         this.factuCod = facturakardex.getFactura() != null ? facturakardex.getFactura().getFactuCod() : null;
-        this.artCod = facturakardex.getArticulo() != null ? facturakardex.getArticulo().getArtCod() : null;
-        this.kardexUnd = facturakardex.getKardexUnd();
-        this.kardexNatu = facturakardex.getKardexNatu();
+        this.kardexCod = facturakardex.getKardex() != null ? facturakardex.getKardex().getKardexCod() : null;
     }
 
-    public Long getKardexCod() {
-        return kardexCod;
+    public Long getFactuKardexCod() {
+        return factuKardexCod;
     }
 
-    public void setKardexCod(Long kardexCod) {
-        this.kardexCod = kardexCod;
+    public void setFactuKardexCod(Long factuKardexCod) {
+        this.factuKardexCod = factuKardexCod;
     }
 
     public Long getFactuCod() {
@@ -35,29 +31,15 @@ public class FacturakardexDto {
         this.factuCod = factuCod;
     }
 
-    public Long getArtCod() {
-        return artCod;
+    public Long getKardexCod() {
+        return kardexCod;
     }
 
-    public void setArtCod(Long artCod) {
-        this.artCod = artCod;
+    public void setKardexCod(Long kardexCod) {
+        this.kardexCod = kardexCod;
     }
 
-    public Integer getKardexUnd() {
-        return kardexUnd;
-    }
 
-    public void setKardexUnd(Integer kardexUnd) {
-        this.kardexUnd = kardexUnd;
-    }
-
-    public Boolean getKardexNatu() {
-        return kardexNatu;
-    }
-
-    public void setKardexNatu(Boolean kardexNatu) {
-        this.kardexNatu = kardexNatu;
-    }
 
 
 

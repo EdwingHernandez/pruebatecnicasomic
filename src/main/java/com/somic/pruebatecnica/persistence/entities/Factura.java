@@ -28,7 +28,7 @@ public class Factura {
     @JoinColumn(name = "nitDocumento")
     private Nit nit;
 
-    @OneToMany(mappedBy = 	"factura")
+    @OneToMany(mappedBy = "factura")
     private List<Facturakardex> facturakardex;
 
     public Factura() {

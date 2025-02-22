@@ -56,7 +56,7 @@ public class FacturakardexController {
 
     @PostMapping("/nuevo")
     public ResponseEntity<FacturakardexDto> crearFacturakardex(@RequestBody Facturakardex facturakardex) {
-        if (facturaService.findById(facturakardex.getFactura().getFactuCod()).isEmpty() || articuloService.findById(facturakardex.getArticulo().getArtCod()).isEmpty()) {
+        if (facturaService.findById(facturakardex.getFactura().getFactuCod()).isEmpty() || articuloService.findById(facturakardex.getKardex().getKardexCod()).isEmpty()) {
             return ResponseEntity.badRequest().build(); 
         }
         Facturakardex nuevaFacturakardex = facturakardexService.save(facturakardex);
@@ -68,7 +68,7 @@ public class FacturakardexController {
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<FacturakardexDto> actualizarFacturakardex(@PathVariable Long id, @RequestBody Facturakardex facturakardex) {
         if (facturakardexService.findById(id).isPresent()) {
-            facturakardex.setKardexCod(id);
+            facturakardex.setFactuKardexCod(id);
             Facturakardex facturakardexActualizada = facturakardexService.update(id, facturakardex);
             return ResponseEntity.ok(new FacturakardexDto(facturakardexActualizada));
         } else {

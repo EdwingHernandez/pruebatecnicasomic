@@ -14,7 +14,7 @@ public class Facturakardex {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long kardexCod;
+    private Long factuKardexCod;
 
 
     @ManyToOne
@@ -23,30 +23,25 @@ public class Facturakardex {
 
 
     @ManyToOne
-    @JoinColumn(name = "artCod")
-    private Articulo articulo;
+    @JoinColumn(name = "kardexCod")
+    private Kardex kardex;
 
-
-    private Integer kardexUnd;
-    private Boolean kardexNatu;
 
     public Facturakardex() {
     }
 
-    public Facturakardex(Long kardexCod, Factura factura, Articulo articulo, Integer kardexUnd, Boolean kardexNatu) {
-        this.kardexCod = kardexCod;
+    public Facturakardex(Long factuKardexCod, Factura factura, Kardex kardex, Integer kardexUnd, Boolean kardexNatu) {
+        this.factuKardexCod = factuKardexCod;
         this.factura = factura;
-        this.articulo = articulo;
-        this.kardexUnd = kardexUnd;
-        this.kardexNatu = kardexNatu;
+        this.kardex = kardex;
     }
 
-    public Long getKardexCod() {
-        return kardexCod;
+    public Long getFactuKardexCod() {
+        return factuKardexCod;
     }
 
-    public void setKardexCod(Long kardexCod) {
-        this.kardexCod = kardexCod;
+    public void setFactuKardexCod(Long factuKardexCod) {
+        this.factuKardexCod = factuKardexCod;
     }
 
     public Factura getFactura() {
@@ -57,31 +52,13 @@ public class Facturakardex {
         this.factura = factura;
     }
 
-    public Articulo getArticulo() {
-        return articulo;
+    public Kardex getKardex() {
+        return kardex;
     }
 
-    public void setArticulo(Articulo articulo) {
-        this.articulo = articulo;
+    public void setKardex(Kardex kardex) {
+        this.kardex = kardex;
     }
-
-    public Integer getKardexUnd() {
-        return kardexUnd;
-    }
-
-    public void setKardexUnd(Integer kardexUnd) {
-        this.kardexUnd = kardexUnd;
-    }
-
-    public Boolean getKardexNatu() {
-        return kardexNatu;
-    }
-
-    public void setKardexNatu(Boolean kardexNatu) {
-        this.kardexNatu = kardexNatu;
-    }
-
-
     
     
 

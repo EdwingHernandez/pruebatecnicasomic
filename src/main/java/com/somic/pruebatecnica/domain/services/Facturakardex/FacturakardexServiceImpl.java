@@ -43,7 +43,7 @@ public class FacturakardexServiceImpl implements FacturakardexService{
         if (!facturakardexRepository.existsById(id)) {
             throw new EntityNotFoundException("Facturakardex no encontrada con id " + id);
         }
-        facturakardex.setKardexCod(id); 
+        facturakardex.setFactuKardexCod(id); 
         return facturakardexRepository.save(facturakardex);
     }
 
