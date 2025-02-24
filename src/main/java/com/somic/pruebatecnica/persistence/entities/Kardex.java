@@ -14,7 +14,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Kardex")
+@Table(name = "kardex")
 public class Kardex {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,8 +33,13 @@ public class Kardex {
     @OneToMany(mappedBy = "kardex")
     private List<Facturakardex> facturakardex;
 
+    
+
+    public Kardex() {
+    }
+
     public Kardex(Long kardexCod, Articulo articulo, Integer kardexUnd, Boolean kardexNatu, LocalDate kardexFecha,
-            Integer kardexSaldoAntes, Integer kardexSaldoDespues) {
+        Integer kardexSaldoAntes, Integer kardexSaldoDespues) {
         this.kardexCod = kardexCod;
         this.articulo = articulo;
         this.kardexUnd = kardexUnd;

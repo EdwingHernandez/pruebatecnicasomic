@@ -26,10 +26,19 @@ INSERT INTO factura (factu_cod, factu_total, factu_fecha, factu_vence, nit_docum
 INSERT INTO factura (factu_cod, factu_total, factu_fecha, factu_vence, nit_documento) VALUES (5, 6200.00, '2024-02-14 16:05:00', '2024-03-14', '444555666');
 
 
-INSERT INTO factura_kardex (kardex_cod, factu_cod, art_cod, kardex_und, kardex_natu) VALUES (1, 1, 1, 10, TRUE);
-INSERT INTO factura_kardex (kardex_cod, factu_cod, art_cod, kardex_und, kardex_natu) VALUES (2, 2, 2, 15, TRUE);
-INSERT INTO factura_kardex (kardex_cod, factu_cod, art_cod, kardex_und, kardex_natu) VALUES (3, 3, 3, 8, TRUE);
-INSERT INTO factura_kardex (kardex_cod, factu_cod, art_cod, kardex_und, kardex_natu) VALUES (4, 4, 4, 20, FALSE);
-INSERT INTO factura_kardex (kardex_cod, factu_cod, art_cod, kardex_und, kardex_natu) VALUES (5, 5, 5, 12, TRUE);
+
+INSERT INTO kardex (kardex_cod, kardex_fecha, kardex_natu, kardex_saldo_antes, kardex_saldo_despues, kardex_und, art_cod) VALUES (1, '2024-02-18 10:30:00', TRUE, 100, 90, 10, 1);
+INSERT INTO kardex (kardex_cod, kardex_fecha, kardex_natu, kardex_saldo_antes, kardex_saldo_despues, kardex_und, art_cod) VALUES (2, '2024-02-17 14:20:00', TRUE, 150, 135, 15, 2);
+INSERT INTO kardex (kardex_cod, kardex_fecha, kardex_natu, kardex_saldo_antes, kardex_saldo_despues, kardex_und, art_cod) VALUES (3, '2024-02-16 09:10:00', TRUE, 80, 72, 8, 3);
+INSERT INTO kardex (kardex_cod, kardex_fecha, kardex_natu, kardex_saldo_antes, kardex_saldo_despues, kardex_und, art_cod) VALUES (4, '2024-02-15 11:45:00', FALSE, 200, 220, 20, 4);
+INSERT INTO kardex (kardex_cod, kardex_fecha, kardex_natu, kardex_saldo_antes, kardex_saldo_despues, kardex_und, art_cod) VALUES (5, '2024-02-14 16:05:00', TRUE, 120, 108, 12, 5);
+
+
+INSERT INTO factura_kardex (factu_kardex_cod, factu_cod, kardex_cod) VALUES (1, 1, 1);
+INSERT INTO factura_kardex (factu_kardex_cod, factu_cod, kardex_cod) VALUES (2, 2, 2);
+INSERT INTO factura_kardex (factu_kardex_cod, factu_cod, kardex_cod) VALUES (3, 3, 3);
+INSERT INTO factura_kardex (factu_kardex_cod, factu_cod, kardex_cod) VALUES (4, 4, 4);
+INSERT INTO factura_kardex (factu_kardex_cod, factu_cod, kardex_cod) VALUES (5, 5, 5);
+
 
 

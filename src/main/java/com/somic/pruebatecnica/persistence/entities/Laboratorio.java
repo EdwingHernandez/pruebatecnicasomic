@@ -13,6 +13,7 @@ public class Laboratorio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long labCod;
+    
     private String labNombre;
 
     public Laboratorio() {
